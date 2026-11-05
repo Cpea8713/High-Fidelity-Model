@@ -1,0 +1,362 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pearce Quality Homes</title>
+  <style>
+    :root {
+      --dark: #202c2a;
+      --green: #536a5d;
+      --cream: #f7f5f0;
+      --white: #ffffff;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: var(--cream);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--white);
+      padding: 20px 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--dark);
+      font-weight: 600;
+    }
+
+    nav a:hover { color: var(--green); }
+
+    .hero {
+      text-align: center;
+      padding: 110px 20px;
+      background: linear-gradient(135deg, #dce2d9, #f7f5f0);
+    }
+
+    .hero h1 {
+      font-size: clamp(36px, 6vw, 58px);
+      line-height: 1.15;
+      margin: 0 auto 20px;
+      max-width: 800px;
+    }
+
+    .hero p {
+      font-size: 19px;
+      max-width: 620px;
+      margin: 0 auto 30px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 13px 24px;
+      margin: 6px;
+      background: var(--dark);
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      border: 2px solid var(--dark);
+      cursor: pointer;
+    }
+
+    .button.secondary {
+      background: transparent;
+      color: var(--dark);
+    }
+
+    .button:hover { opacity: 0.8; }
+
+    section {
+      padding: 65px 6%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    h2 {
+      font-size: 32px;
+      margin-top: 0;
+    }
+
+    .center { text-align: center; }
+
+    .features, .project-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+      margin-top: 30px;
+    }
+
+    .feature, .project-card {
+      background: white;
+      padding: 25px;
+      border-radius: 8px;
+      border: 1px solid #e4e4e4;
+    }
+
+    .feature { text-align: center; }
+
+    .feature-icon {
+      font-size: 36px;
+      margin-bottom: 12px;
+    }
+
+    .photo-placeholder {
+      background: #e0e4df;
+      height: 210px;
+      display: grid;
+      place-items: center;
+      color: #59645d;
+      border-radius: 5px;
+      text-align: center;
+    }
+
+    .project-card h3 { margin-bottom: 5px; }
+
+    .project-card a {
+      color: var(--green);
+      font-weight: bold;
+    }
+
+    .notice {
+      background: white;
+      padding: 45px 25px;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+      text-align: center;
+      max-width: 750px;
+      margin: 30px auto 0;
+    }
+
+    .contact-box {
+      background: white;
+      border-radius: 8px;
+      padding: 35px;
+      max-width: 650px;
+      margin: 30px auto 0;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    input, textarea {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      margin-top: 5px;
+      border: 1px solid #aaa;
+      border-radius: 4px;
+      font: inherit;
+    }
+
+    textarea { min-height: 120px; }
+
+    footer {
+      background: var(--dark);
+      color: white;
+      padding: 30px;
+      text-align: center;
+    }
+
+    @media (max-width: 700px) {
+      header { justify-content: center; }
+      nav { justify-content: center; gap: 12px; }
+      .features, .project-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero { padding: 75px 20px; }
+      section { padding: 45px 5%; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">⌂ Pearce Quality Homes</div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#available">Available Homes</a>
+      <a href="#projects">Past Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="hero" id="home">
+      <h1>Renovated Homes You Can Trust</h1>
+      <p>
+        Quality renovations, thoughtful design, and
+        move-in-ready homes built around what matters most.
+      </p>
+      <a class="button" href="#available">
+        View Available Homes
+      </a>
+      <a class="button secondary" href="#projects">
+        Explore Past Projects
+      </a>
+    </div>
+
+    <section>
+      <h2 class="center">Why Pearce Quality Homes?</h2>
+
+      <div class="features">
+        <div class="feature">
+          <div class="feature-icon">⌂</div>
+          <h3>Move-In Ready</h3>
+          <p>
+            Beautifully updated homes designed for
+            comfortable everyday living.
+          </p>
+        </div>
+
+        <div class="feature">
+          <div class="feature-icon">✓</div>
+          <h3>Quality Renovations</h3>
+          <p>
+            Thoughtful improvements with attention
+            to both appearance and function.
+          </p>
+        </div>
+
+        <div class="feature">
+          <div class="feature-icon">◇</div>
+          <h3>Transparent Process</h3>
+          <p>
+            Explore completed projects and see
+            the work behind each transformation.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="available">
+      <h2 class="center">Available Homes</h2>
+
+      <div class="notice">
+        <h3>No Homes Currently Available</h3>
+        <p>
+          We're working toward our next renovation.
+          In the meantime, explore our completed projects
+          to see the quality of our work.
+        </p>
+        <a class="button" href="#projects">
+          View Past Projects
+        </a>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2 class="center">Past Renovation Projects</h2>
+      <p class="center">
+        Take a look at homes we've transformed.
+        Real project photos and renovation details
+        will be added here.
+      </p>
+
+      <div class="project-grid">
+
+        <div class="project-card">
+          <div class="photo-placeholder">
+            Project 1 Photo
+          </div>
+          <h3>Renovation Project 1</h3>
+          <p>Completed home renovation</p>
+          <a href="#contact">Ask About This Project</a>
+        </div>
+
+        <div class="project-card">
+          <div class="photo-placeholder">
+            Project 2 Photo
+          </div>
+          <h3>Renovation Project 2</h3>
+          <p>Completed home renovation</p>
+          <a href="#contact">Ask About This Project</a>
+        </div>
+
+        <div class="project-card">
+          <div class="photo-placeholder">
+            Project 3 Photo
+          </div>
+          <h3>Renovation Project 3</h3>
+          <p>Completed home renovation</p>
+          <a href="#contact">Ask About This Project</a>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2 class="center">Contact Us</h2>
+      <p class="center">
+        Have questions about our renovations or
+        interested in a future home? Get in touch.
+      </p>
+
+      <div class="contact-box">
+        <form id="contactForm">
+          <label for="name">Name</label>
+          <input id="name" type="text" required>
+
+          <label for="email">Email</label>
+          <input id="email" type="email" required>
+
+          <label for="message">Message</label>
+          <textarea id="message" required></textarea>
+
+          <button class="button" type="submit">
+            Send Message
+          </button>
+        </form>
+
+        <p id="formNotice" role="status"></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Pearce Quality Homes</p>
+    <p>Quality Renovations. Thoughtful Design.</p>
+  </footer>
+
+  <script>
+    document.getElementById("contactForm")
+      .addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        document.getElementById("formNotice")
+          .textContent =
+          "This is a prototype. Messages are not sent yet.";
+      });
+  </script>
+
+</body>
+</html>
