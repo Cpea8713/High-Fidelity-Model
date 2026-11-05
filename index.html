@@ -198,6 +198,154 @@
       .hero { padding: 75px 20px; }
       section { padding: 45px 5%; }
     }
+    
+/* PEARCE QUALITY HOMES - UPDATED COLORS */
+
+/* Navigation */
+header {
+  background: var(--white);
+  border-bottom: 4px solid var(--wood);
+  box-shadow: 0 3px 12px rgba(41, 59, 50, 0.08);
+}
+
+.logo {
+  color: var(--green);
+}
+
+nav a:hover {
+  color: var(--green);
+}
+
+/* Main homepage banner */
+.hero {
+  background: linear-gradient(
+    135deg,
+    #718878 0%,
+    #91A394 55%,
+    #E9E5D9 100%
+  );
+  padding: 125px 20px;
+}
+
+.hero h1 {
+  color: #FFFFFF;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.18);
+}
+
+.hero p {
+  color: #FFFFFF;
+  font-weight: 500;
+}
+
+/* Buttons */
+.button {
+  background: var(--green);
+  border-color: var(--green);
+  color: white;
+  transition: 0.2s ease;
+}
+
+.button:hover {
+  background: var(--dark);
+  border-color: var(--dark);
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+.button.secondary {
+  background: var(--cream);
+  color: var(--dark);
+  border-color: var(--cream);
+}
+
+/* Section headings */
+h2 {
+  color: var(--dark);
+}
+
+h2::after {
+  content: "";
+  display: block;
+  width: 65px;
+  height: 4px;
+  background: var(--wood);
+  margin: 14px auto 0;
+  border-radius: 5px;
+}
+
+/* Feature cards */
+.feature {
+  background: #FFFFFF;
+  border-top: 5px solid var(--green);
+  box-shadow: 0 5px 18px rgba(41,59,50,0.07);
+}
+
+.feature-icon {
+  color: var(--green);
+}
+
+/* Available homes section */
+#available {
+  background: var(--sage-light);
+  border-radius: 12px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.notice {
+  border: 2px solid #D4DCCF;
+  box-shadow: 0 5px 15px rgba(41,59,50,0.05);
+}
+
+/* Past project cards */
+.project-card {
+  border: 1px solid #D4DCCF;
+  border-bottom: 5px solid var(--wood);
+  box-shadow: 0 5px 18px rgba(41,59,50,0.07);
+  transition: transform 0.2s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.photo-placeholder {
+  background: linear-gradient(
+    135deg,
+    #D4DCCF,
+    #E9E5D9
+  );
+  color: var(--dark);
+}
+
+.project-card a {
+  color: var(--green);
+}
+
+/* Contact section */
+#contact {
+  background: var(--sage-light);
+  border-radius: 12px;
+  margin-bottom: 40px;
+}
+
+.contact-box {
+  border-top: 5px solid var(--wood);
+  box-shadow: 0 5px 18px rgba(41,59,50,0.07);
+}
+
+input:focus,
+textarea:focus {
+  outline: 2px solid var(--green);
+  border-color: var(--green);
+}
+
+/* Footer */
+footer {
+  background: var(--dark);
+  border-top: 6px solid var(--wood);
+}
+
   </style>
 </head>
 
