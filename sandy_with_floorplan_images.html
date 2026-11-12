@@ -1,0 +1,474 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sandy Renovation | Pearce Quality Homes</title>
+
+  <style>
+    :root {
+      --sage: #718878;
+      --dark: #293B32;
+      --cream: #F9F7F2;
+      --wood: #C4A17B;
+      --light: #E4EBE2;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: var(--cream);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    header {
+      background: white;
+      border-bottom: 5px solid var(--wood);
+      padding: 20px 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .logo {
+      font-size: 23px;
+      font-weight: bold;
+      color: #486653;
+      text-decoration: none;
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--dark);
+      font-weight: bold;
+    }
+
+    nav a:hover { color: var(--sage); }
+
+    .banner {
+      background: linear-gradient(120deg,#486653,#718878);
+      color: white;
+      text-align: center;
+      padding: 65px 20px;
+    }
+
+    .banner h1 {
+      font-size: clamp(36px,6vw,58px);
+      margin: 0 0 10px;
+    }
+
+    .status {
+      display: inline-block;
+      background: var(--wood);
+      color: #242b24;
+      padding: 7px 17px;
+      border-radius: 30px;
+      font-weight: bold;
+      margin-top: 15px;
+    }
+
+    section {
+      max-width: 1150px;
+      margin: auto;
+      padding: 60px 6%;
+    }
+
+    h2 {
+      font-size: 30px;
+      margin: 0 0 20px;
+    }
+
+    .main-photo {
+      width: 100%;
+      max-height: 600px;
+      object-fit: cover;
+      border-radius: 12px;
+      display: block;
+    }
+
+    .intro {
+      font-size: 18px;
+      max-width: 850px;
+      margin: 25px auto 0;
+      text-align: center;
+    }
+
+    .comparison {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+      margin-top: 30px;
+    }
+
+    .photo-card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    }
+
+    .photo-card img {
+      width: 100%;
+      height: 330px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .photo-card h3 {
+      padding: 0 20px;
+    }
+
+    .photo-card p {
+      padding: 0 20px 20px;
+    }
+
+    .highlights {
+      background: var(--light);
+      border-radius: 12px;
+      padding: 30px;
+    }
+
+    .highlights ul {
+      columns: 2;
+      padding-left: 25px;
+    }
+
+    .highlights li {
+      margin-bottom: 12px;
+    }
+
+    .placeholder {
+      background: #E9E5D9;
+      border: 2px dashed #A5B4A5;
+      padding: 55px 20px;
+      text-align: center;
+      border-radius: 12px;
+      color: #526258;
+    }
+
+    .button {
+      display: inline-block;
+      background: #486653;
+      color: white;
+      padding: 14px 24px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .button:hover { background: var(--dark); }
+
+    .center { text-align: center; }
+
+    footer {
+      background: var(--dark);
+      color: white;
+      text-align: center;
+      padding: 30px;
+      border-top: 6px solid var(--wood);
+    }
+
+    @media(max-width:700px) {
+      header { justify-content: center; }
+      nav { justify-content: center; }
+      .comparison { grid-template-columns: 1fr; }
+      .highlights ul { columns: 1; }
+      section { padding: 40px 5%; }
+      .photo-card img { height: auto; }
+    }
+
+    .spec-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; margin:26px 0; }
+    .spec-card { background:white; border:1px solid #dbe3da; border-radius:12px; padding:22px 14px; text-align:center; }
+    .spec-card strong { display:block; font-size:25px; color:#486653; line-height:1.25; }
+    .spec-card span { display:block; margin-top:7px; font-size:13px; color:#526258; }
+    .level-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; margin-top:18px; }
+    .level-card { background:var(--light); padding:22px; border-radius:12px; }
+    .level-card h3 { margin:0 0 8px; }
+    .level-card p { margin:0 0 14px; }
+    .floorplan-link { display:block; }
+    .floorplan-image { display:block; width:100%; height:auto; border-radius:8px; background:white; border:1px solid #dbe3da; }
+    .floorplan-caption { font-size:12px; color:#526258; margin-top:8px; }
+    .upgrade-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; margin-top:22px; }
+    .upgrade-card { background:white; border:1px solid #dbe3da; border-radius:12px; padding:22px; }
+    .upgrade-card h3 { margin:0 0 8px; color:#486653; }
+    .upgrade-card p { margin:0; }
+    @media(max-width:700px) { .spec-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } .level-grid,.upgrade-grid { grid-template-columns:1fr; } }
+
+    .gallery-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; margin-top:28px; }
+    .gallery-item { display:block; border:0; padding:0; text-align:left; background:white; color:var(--dark); border-radius:12px; overflow:hidden; cursor:pointer; box-shadow:0 5px 18px rgba(0,0,0,.09); font:inherit; }
+    .gallery-item img { width:100%; height:230px; object-fit:cover; display:block; transition:transform .2s; }
+    .gallery-item:hover img { transform:scale(1.035); }
+    .gallery-item:focus-visible { outline:3px solid var(--sage); outline-offset:3px; }
+    .gallery-item span { display:block; padding:10px 14px; font-weight:bold; }
+    #photoViewer { max-width:min(1100px,94vw); max-height:94vh; border:0; border-radius:12px; padding:16px; background:var(--cream); color:var(--dark); }
+    #photoViewer::backdrop { background:rgba(15,24,19,.86); }
+    #viewerImage { display:block; max-width:100%; max-height:78vh; margin:auto; object-fit:contain; }
+    #viewerCaption { text-align:center; margin:10px 0 0; }
+    #closeViewer { float:right; border:0; background:var(--dark); color:white; border-radius:50%; width:36px; height:36px; cursor:pointer; font-size:25px; margin-bottom:8px; }
+    @media(max-width:800px) { .gallery-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+    @media(max-width:500px) { .gallery-grid { grid-template-columns:1fr; } .gallery-item img { height:auto; aspect-ratio:4/3; } }
+
+    .walkthrough-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px; align-items:start; }
+    .walkthrough-card { background:white; border-radius:12px; padding:20px; box-shadow:0 3px 12px rgba(0,0,0,.07); text-align:center; }
+    .walkthrough-card h3 { margin:0 0 14px; }
+    .shorts-frame { width:100%; max-width:320px; aspect-ratio:9/16; margin:0 auto; overflow:hidden; border-radius:10px; background:#15231b; }
+    .shorts-frame iframe { width:100%; height:100%; border:0; display:block; }
+    @media(max-width:650px) { .walkthrough-grid { grid-template-columns:1fr; } }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <a class="logo" href="index.html">
+      ⌂ Pearce Quality Homes
+    </a>
+
+    <nav>
+      <a href="index.html#home">Home</a>
+      <a href="index.html#available">Available Homes</a>
+      <a href="index.html#projects">Past Projects</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <div class="banner">
+      <h1>Sandy Renovation</h1>
+      <p>Sandy, Utah</p>
+      <span class="status">Completed & Sold</span>
+    </div>
+
+    <section>
+      <img
+        class="main-photo"
+        src="Sandy_IMG_5572.jpg"
+        alt="Completed Sandy home exterior"
+      >
+
+      <p class="intro">
+        A fully renovated 1962 rambler in Sandy, Utah, with five bedrooms, two bathrooms,
+        2,268 finished square feet, and a fully finished basement. The project included
+        major interior and exterior upgrades, new heating and cooling equipment, and
+        updates to plumbing and electrical systems.
+      </p>
+    </section>
+
+    <section id="property-details">
+      <h2>Property Details</h2>
+      <p>This completed and sold single-family rambler is presented as a renovation portfolio project. Exact address and sale information are not published.</p>
+      <div class="spec-grid">
+        <div class="spec-card"><strong>5</strong><span>Bedrooms</span></div>
+        <div class="spec-card"><strong>2</strong><span>Bathrooms · 1 full + 1 three-quarter</span></div>
+        <div class="spec-card"><strong>2,268</strong><span>Finished square feet</span></div>
+        <div class="spec-card"><strong>0.20</strong><span>Acres</span></div>
+        <div class="spec-card"><strong>1-Car</strong><span>Attached garage</span></div>
+        <div class="spec-card"><strong>1962</strong><span>Year built</span></div>
+      </div>
+      <h3>Floor Plan Overview</h3>
+      <div class="level-grid">
+        <div class="level-card"><h3>Main Level</h3><p>Living room, kitchen and dining area, 3 bedrooms, and 1 full bathroom.</p><a class="floorplan-link" href="Sandy_MainFloor.png" target="_blank" rel="noopener" aria-label="View full-size Sandy main level floor plan"><img class="floorplan-image" src="Sandy_MainFloor.png" alt="Sandy home main-level floor plan showing kitchen, living and dining area, three bedrooms, and a full bathroom" loading="lazy"></a><div class="floorplan-caption">Select the floor plan to view it full size.</div></div>
+        <div class="level-card"><h3>Finished Basement</h3><p>Family room with dry bar, office, laundry room, 2 bedrooms, and 1 three-quarter bathroom.</p><a class="floorplan-link" href="Sandy_Basement.png" target="_blank" rel="noopener" aria-label="View full-size Sandy basement floor plan"><img class="floorplan-image" src="Sandy_Basement.png" alt="Sandy finished basement floor plan with family room, office, laundry area, two bedrooms, and bathroom" loading="lazy"></a><div class="floorplan-caption">Select the floor plan to view it full size.</div></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Exterior Transformation</h2>
+      <p>
+        See how the home's exterior changed
+        from before the renovation to the finished result.
+      </p>
+
+      <div class="comparison">
+
+        <div class="photo-card">
+          <img
+            src="Sandy_Before1.jpg"
+            alt="Sandy home exterior before renovation"
+          >
+          <h3>Before</h3>
+          <p>Original exterior before renovation.</p>
+        </div>
+
+        <div class="photo-card">
+          <img
+            src="Sandy_IMG_5572.jpg"
+            alt="Sandy home exterior after renovation"
+          >
+          <h3>After</h3>
+          <p>Updated exterior with new finishes.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="renovation-details">
+      <h2>Renovation Highlights</h2>
+      <p>Updates throughout the home, from finishes and fixtures to major exterior and mechanical improvements.</p>
+      <div class="upgrade-grid">
+        <div class="upgrade-card"><h3>Kitchen</h3><p>All-new cabinets, quartz and butcher block countertops, stainless steel appliances, backsplash, and sink.</p></div>
+        <div class="upgrade-card"><h3>Bathrooms</h3><p>New tub, tile, plumbing valves, toilets, cabinets, sinks, mirrors, and fixtures.</p></div>
+        <div class="upgrade-card"><h3>Flooring &amp; Interior</h3><p>New hardwood, luxury vinyl plank, and carpet, plus new interior doors and a basement dry bar.</p></div>
+        <div class="upgrade-card"><h3>Exterior</h3><p>New siding, exterior doors, all windows, roof, garage door, and exterior paint.</p></div>
+        <div class="upgrade-card"><h3>Heating &amp; Cooling</h3><p>New furnace and central air conditioning.</p></div>
+        <div class="upgrade-card"><h3>Electrical &amp; Plumbing</h3><p>New wiring, outlets, switches, and lighting; drain pipe repairs, new plumbing valves, and fixtures.</p></div>
+        <div class="upgrade-card"><h3>Yard</h3><p>New sprinkler system installed.</p></div>
+      </div>
+    </section>
+
+    <section id="interior-gallery">
+      <h2>Finished Interior Gallery</h2>
+      <p>Explore the completed rooms and details throughout the Sandy renovation. Select a photo to view it larger.</p>
+      <div class="gallery-grid">
+        <button class="gallery-item" type="button" data-full="Sandy_Kitchen.jpg" aria-label="Enlarge Kitchen">
+          <img src="Sandy_Kitchen.jpg" alt="Sandy renovation: Kitchen" loading="lazy">
+          <span>Kitchen</span>
+        </button>
+        <button class="gallery-item" type="button" data-full="Sandy_Livingroom.jpg" aria-label="Enlarge Living Room">
+          <img src="Sandy_Livingroom.jpg" alt="Sandy renovation: Living Room" loading="lazy">
+          <span>Living Room</span>
+        </button>
+        <button class="gallery-item" type="button" data-full="Sandy_FamilyRoom.jpg" aria-label="Enlarge Family Room">
+          <img src="Sandy_FamilyRoom.jpg" alt="Sandy renovation: Family Room" loading="lazy">
+          <span>Family Room</span>
+        </button>
+        <button class="gallery-item" type="button" data-full="Sandy_Dining.jpg" aria-label="Enlarge Dining Area">
+          <img src="Sandy_Dining.jpg" alt="Sandy renovation: Dining Area" loading="lazy">
+          <span>Dining Area</span>
+        </button>
+        <button class="gallery-item" type="button" data-full="Sandy_GardenWindow.jpg" aria-label="Enlarge Living Room Window">
+          <img src="Sandy_GardenWindow.jpg" alt="Sandy renovation: Living Room Window" loading="lazy">
+          <span>Living Room Window</span>
+        </button>
+        <button class="gallery-item" type="button" data-full="Sandy_MainBath.jpg" aria-label="Enlarge Main Bathroom">
+          <img src="Sandy_MainBath.jpg" alt="Sandy renovation: Main Bathroom" loading="lazy">
+          <span>Main Bathroom</span>
+        </button>
+        <button class="gallery-item" type="button" data-full="Sandy_MainBath1.jpg" aria-label="Enlarge Main Bathroom Detail">
+          <img src="Sandy_MainBath1.jpg" alt="Sandy renovation: Main Bathroom Detail" loading="lazy">
+          <span>Main Bathroom Detail</span>
+        </button>
+        <button class="gallery-item" type="button" data-full="Sandy_BasementBath.jpg" aria-label="Enlarge Basement Bathroom">
+          <img src="Sandy_BasementBath.jpg" alt="Sandy renovation: Basement Bathroom" loading="lazy">
+          <span>Basement Bathroom</span>
+        </button>
+        <button class="gallery-item" type="button" data-full="Sandy_MainBed1.jpg" aria-label="Enlarge Bedroom Detail">
+          <img src="Sandy_MainBed1.jpg" alt="Sandy renovation: Bedroom Detail" loading="lazy">
+          <span>Bedroom Detail</span>
+        </button>
+        <button class="gallery-item" type="button" data-full="Sandy_MainBed2.jpg" aria-label="Enlarge Bedroom Accent Wall">
+          <img src="Sandy_MainBed2.jpg" alt="Sandy renovation: Bedroom Accent Wall" loading="lazy">
+          <span>Bedroom Accent Wall</span>
+        </button>
+        <button class="gallery-item" type="button" data-full="Sandy_MainBed3.jpg" aria-label="Enlarge Bedroom Accent Wall">
+          <img src="Sandy_MainBed3.jpg" alt="Sandy renovation: Bedroom Accent Wall" loading="lazy">
+          <span>Bedroom Accent Wall</span>
+        </button>
+        <button class="gallery-item" type="button" data-full="Sandy_BasementBed1.jpg" aria-label="Enlarge Basement Bedroom">
+          <img src="Sandy_BasementBed1.jpg" alt="Sandy renovation: Basement Bedroom" loading="lazy">
+          <span>Basement Bedroom</span>
+        </button>
+        <button class="gallery-item" type="button" data-full="Sandy_BasementBed2.jpg" aria-label="Enlarge Basement Bedroom">
+          <img src="Sandy_BasementBed2.jpg" alt="Sandy renovation: Basement Bedroom" loading="lazy">
+          <span>Basement Bedroom</span>
+        </button>
+        <button class="gallery-item" type="button" data-full="Sandy_BasementHall.jpg" aria-label="Enlarge Basement Hall">
+          <img src="Sandy_BasementHall.jpg" alt="Sandy renovation: Basement Hall" loading="lazy">
+          <span>Basement Hall</span>
+        </button>
+        <button class="gallery-item" type="button" data-full="Sandy_BasementHall1.jpg" aria-label="Enlarge Basement Hall">
+          <img src="Sandy_BasementHall1.jpg" alt="Sandy renovation: Basement Hall" loading="lazy">
+          <span>Basement Hall</span>
+        </button>
+        <button class="gallery-item" type="button" data-full="Sandy_BasementStairs.jpg" aria-label="Enlarge Basement Stairs">
+          <img src="Sandy_BasementStairs.jpg" alt="Sandy renovation: Basement Stairs" loading="lazy">
+          <span>Basement Stairs</span>
+        </button>
+        <button class="gallery-item" type="button" data-full="Sandy_LaundryRoom.jpg" aria-label="Enlarge Laundry Room">
+          <img src="Sandy_LaundryRoom.jpg" alt="Sandy renovation: Laundry Room" loading="lazy">
+          <span>Laundry Room</span>
+        </button>
+      </div>
+    </section>
+    <dialog id="photoViewer" aria-label="Enlarged renovation photo">
+      <button id="closeViewer" type="button" aria-label="Close photo">×</button>
+      <img id="viewerImage" alt="">
+      <p id="viewerCaption"></p>
+    </dialog>
+
+
+    <section>
+      <h2>Before Renovation Walkthroughs</h2>
+
+      <p>Take a look inside the home before its transformation.</p>
+      <div class="walkthrough-grid">
+        <div class="walkthrough-card">
+          <h3>Walkthrough — Part 1</h3>
+          <div class="shorts-frame">
+            <iframe src="https://www.youtube.com/embed/EmqJUMRS7O8" title="Sandy before-renovation walkthrough, part 1" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="walkthrough-card">
+          <h3>Walkthrough — Part 2</h3>
+          <div class="shorts-frame">
+            <iframe src="https://www.youtube.com/embed/VyGHhQkrxdE" title="Sandy before-renovation walkthrough, part 2" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="center">
+      <h2>Explore More Projects</h2>
+      <p>
+        See more Pearce Quality Homes renovations
+        or contact us about future properties.
+      </p>
+
+      <a class="button" href="index.html#projects">
+        Back to Past Projects
+      </a>
+
+      <a class="button" href="index.html#contact">
+        Contact Us
+      </a>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2026 Pearce Quality Homes</p>
+    <p>Quality Renovations. Thoughtful Design.</p>
+  </footer>
+
+  <script>
+    const viewer = document.getElementById('photoViewer');
+    const viewerImage = document.getElementById('viewerImage');
+    const viewerCaption = document.getElementById('viewerCaption');
+    document.querySelectorAll('.gallery-item').forEach(item => {
+      item.addEventListener('click', () => {
+        viewerImage.src = item.dataset.full;
+        viewerImage.alt = item.querySelector('img').alt;
+        viewerCaption.textContent = item.querySelector('span').textContent;
+        viewer.showModal();
+      });
+    });
+    document.getElementById('closeViewer').addEventListener('click', () => viewer.close());
+    viewer.addEventListener('click', event => { if (event.target === viewer) viewer.close(); });
+  </script>
+</body>
+</html>
